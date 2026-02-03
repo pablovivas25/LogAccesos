@@ -1,4 +1,4 @@
-name: CI
+name: CI y CD
 
 on:
   push:
@@ -13,10 +13,14 @@ jobs:
           with:
             node-version: 20
             cache: 'npm'
-            
+
         - run: npm install 
         - run: npm run lint
         - run: npm test
+
+        - name: deploy falso
+          if: github.ref == 'refs/heads/main'
+          run: echo "🚀 Deploying application..." 
   
     
     
