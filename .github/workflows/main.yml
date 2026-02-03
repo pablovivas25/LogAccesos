@@ -27,7 +27,7 @@ jobs:
             name: build-output
             path: dist/
 
-        - name: deploy falso
+        - name: deploy falso a 
           if: github.ref == 'refs/heads/main'
           run: echo "🚀 Deploying application..." 
   
