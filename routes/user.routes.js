@@ -5,6 +5,9 @@ const { body, validationResult } = require("express-validator");
 const router = express.Router();
 const userController = require("../controllers/user.controllers");
 
+router.get("/test", (req, res) => {
+    res.json({ status:"ok" });
+});
 router.get("/", userController.getUsers);
 router.get("/:id", userController.getUser);
 router.post(
